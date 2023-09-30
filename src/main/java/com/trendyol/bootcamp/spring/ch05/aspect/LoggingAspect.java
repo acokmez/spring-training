@@ -61,12 +61,11 @@ public class LoggingAspect {
 		Monitor monitor = monitorFactory.start(name);
 		try {
 			// Invoke repository method ...
-			Object result = repositoryMethod.proceed();
 			//  TODO-08: Add the logic to proceed with the target method invocation.
 			//  - Be sure to return the target method's return value to the caller
 			//    and delete the line below.
 
-			return result;
+			return repositoryMethod.proceed();
 
 		} finally {
 			monitor.stop();
